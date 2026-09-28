@@ -34,6 +34,6 @@ class Bank_Account:
         
         
     
-b1 = Bank_Account("Suleyman", 123, 100, 'Password1')
+b1 = Bank_Account("Clarence", 123, 100, 'Password1')
 b1.show_info()
 
