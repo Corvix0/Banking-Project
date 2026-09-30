@@ -12,11 +12,15 @@ v7 error handling
 
 
 class Bank:
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.users = []
     
     def add_user(self, user):
         self.users.append(user)
+    
+    def list_users(self):
+        return [f"{user.name} {user.phone_number}" for user in self.users]
 
     
 class BankUser():
@@ -25,7 +29,7 @@ class BankUser():
         self.phone_number = phone_number
         self.balance = balance
         self.password = password
-        
+
 
 
     def deposit(self):
@@ -46,15 +50,12 @@ class BankUser():
         print(f"User: {self.name}")
         print(f"Balance: {self.balance}")
         
+user1 = BankUser("Michael", 123, 100, "password1")
+user2 = BankUser("Franklin", 222, 200.50, "passwordF")
 
-u1 = BankUser("Michael", 123, 100, 'Password1')
-u2 = BankUser("Hasan", 124, 200, "password2")
-b1 = Bank()
-b1.add_user(u1)
-b1.add_user(u2)
-print(b1.users[0].name)
-print(b1.users[1].name)
+Bank1 = Bank("CO Bank")
+Bank1.add_user(user1)
+Bank1.add_user(user2)
 
-
- 
+print(Bank1.list_users())
 
